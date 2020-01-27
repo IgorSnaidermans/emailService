@@ -7,8 +7,12 @@ public class Email {
     String emailSubject;
     String emailBody;
 
+    public Email(){
+
+    }
+
     private Email(Builder builder) {
-        setRecipient(builder.recepient);
+        setRecipient(builder.recipient);
         setEmailSubject(builder.emailTheme);
         setEmailBody(builder.emailBody);
     }
@@ -17,7 +21,7 @@ public class Email {
     @Override
     public String toString() {
         return "EmailToSend{" +
-                "recepient='" + recipient + '\'' +
+                "recipient='" + recipient + '\'' +
                 ", emailTheme='" + emailSubject + '\'' +
                 ", emailBody='" + emailBody + '\'' +
                 '}';
@@ -63,15 +67,15 @@ public class Email {
     }
 
     public static final class Builder {
-        private String recepient;
+        private String recipient;
         private String emailTheme;
         private String emailBody;
 
         public Builder() {
         }
 
-        public Builder recepient(String val) {
-            recepient = val;
+        public Builder recipient(String val) {
+            recipient = val;
             return this;
         }
 
