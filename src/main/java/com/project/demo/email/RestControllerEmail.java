@@ -1,4 +1,4 @@
-package com.project.demo;
+package com.project.demo.email;
 
 import com.sparkpost.exception.SparkPostException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +15,9 @@ public class RestControllerEmail {
         this.emailService = emailService;
     }
 
-    @PostMapping
-    public void sendEmail(@RequestBody EmailToSend emailToSend) throws SparkPostException {
-        emailService.sendEmail(emailToSend);
+    @PostMapping("/sendemail")
+    public void sendEmail(@RequestBody Email email) throws SparkPostException {
+        emailService.sendEmail(email);
     }
 
 }

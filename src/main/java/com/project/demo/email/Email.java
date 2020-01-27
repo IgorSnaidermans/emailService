@@ -1,13 +1,13 @@
-package com.project.demo;
+package com.project.demo.email;
 
 import java.util.Objects;
 
-public class EmailToSend {
+public class Email {
     String recipient;
     String emailSubject;
     String emailBody;
 
-    private EmailToSend(Builder builder) {
+    private Email(Builder builder) {
         setRecipient(builder.recepient);
         setEmailSubject(builder.emailTheme);
         setEmailBody(builder.emailBody);
@@ -27,7 +27,7 @@ public class EmailToSend {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EmailToSend that = (EmailToSend) o;
+        Email that = (Email) o;
         return Objects.equals(recipient, that.recipient) &&
                 Objects.equals(emailSubject, that.emailSubject) &&
                 Objects.equals(emailBody, that.emailBody);
@@ -85,8 +85,8 @@ public class EmailToSend {
             return this;
         }
 
-        public EmailToSend build() {
-            return new EmailToSend(this);
+        public Email build() {
+            return new Email(this);
         }
     }
 }
